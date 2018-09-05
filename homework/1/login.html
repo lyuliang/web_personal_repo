@@ -4,70 +4,118 @@
         <link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css"/>
     </head>
     <style type="text/css">
-    	.login-top {
-    		width: 100%;
-    		height: 300px;
-    	}
-    	.login-middle {
-    		background-color: black;
-    		position: absolute;
-    		left: 0;
-    		right: 0;
-    		/*top: 300px;
-    		bottom: 200px;*/
-    		height: 450px;
-       		font-size: 100px;
-       		clear: both;
-    	}
-    	.gru-login { 		
-    		color: #0062c8;
-    		font-weight: bold;
-    		font-size: 4em;
-    		position: absolute;
-    		left: 40px;
-    		top: 100px;
-    	}
-    	.share-login {
-    		color: #0062c8;
-    		font-weight: bold;
-    		font-size: 2.5em;
-    		position: absolute;
-    		right: 20px;
-    		top: 200px;
-    	}
-    	.login_hint {
-    		color: yellow;
-    		font-family: "Papyrus", Fantasy;
-    		font-size: 30px;
-    		font-weight: bold;
-    		position: absolute;
-    		top: 40px;
-    		left: 360px;
-    	}
-    	.login-bottom {
-    		height: 200px;
-    	}
-    	.blue-underline {
-    		color: #0062c8;
-    		font-size: 26px;
-    		font-weight: bold;
-    		text-decoration: underline;
-    		align-self: center;
-    		position: absolute;
-    		top: 80px;
-    		text-align: center;   		
-    	}
+        .login-top {
+            width: 100%;
+            height: 300px;
+        }
+        .login-middle {
+            background-color: black;
+            width: 100%;
+            /*top: 300px;
+            bottom: 200px;*/
+            height: 450px;
+            font-size: 100px;
+            clear: both;
+            z-index: -1;
+        }
+        .gru-login {        
+            color: #0062c8;
+            font-weight: bold;
+            font-size: 4em;
+            position: absolute;
+            left: 40px;
+            top: 100px;
+        }
+        .share-login {
+            color: #0062c8;
+            font-weight: bold;
+            font-size: 2.5em;
+            position: absolute;
+            right: 20px;
+            top: 200px;
+        }
+        .login_hint {
+            color: yellow;
+            font-family: "Papyrus", Fantasy;
+            font-size: 30px;
+            font-weight: bold;
+            position: relative;
+            top: 40px;
+            left: 360px;
+        }
+        .row1 {
+            position: relative;
+            top: 50px;
+            height: 150px;
+        }
+        .row2 {
+            position: relative;
+            top: 0px;
+        }
+        .input-label {
+            color: yellow;
+            font-size: 40px;
+            position: absolute;
+            right: 960px;
+        }
+        .input-text {
+            border-style: solid;
+            border-radius: 10px;
+            position: absolute;
+            top: 5px;
+            right: 500px;
+            width: 400px;
+            height: 50px;
+        }
+        .login-bottom {
+            height: 100px;
+            width: 100%;
+        }
+        .blue-underline {
+            color: #0062c8;
+            font-size: 26px;
+            font-weight: bold;
+            text-decoration: underline;
+            align-self: center;
+            position: relative;
+            top: 80px;
+            text-align: center;         
+        }
+        .button-log_sign {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            font-size: 40px;
+            border-radius: 10px;
+            border-style: solid;
+            width: 190px;
+            height: 70px;
+            position: relative;
+            left: 783px;
+            top: 50px;
+        }
     </style>
     <body>
-    	<div class="login-top">
-    		<p class="gru-login">GRUMBLR</p>
-    		<p class="share-login">Share the highlights of your life</p>
-    	</div>
+        <div class="login-top">
+            <p class="gru-login">GRUMBLR</p>
+            <p class="share-login">Share the highlights of your life</p>
+        </div>
         <div class="login-middle">
-        	<p class="login_hint">Login to your GRUMBLR</p>
+            <p class="login_hint">Login to your GRUMBLR</p>
+            <div class="row1">
+                <p class="input-label">Username</p>
+                <input type="text" name="Username" class="input-text">
+            </div>
+            <div class="row2">
+                <p class="input-label">Password</p>
+                <input type="text" name="Password" class="input-text">
+            </div>
+            <div>
+                <button class="button-log_sign">Log in</button>
+            </div>
         </div>
         <div>
-        	<p class="blue-underline">No account yet? Sign up for FREE!</p>   
+            <p class="blue-underline">No account yet? Sign up for FREE!</p>   
         </div>
     </body>
 </html>
