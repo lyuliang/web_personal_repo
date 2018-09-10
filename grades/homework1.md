@@ -3,8 +3,7 @@ Homework 1 Feedback
 
 Commit graded: 3987c06f57c7743092751a45b089fb70c8a3af69
 
-### Grumblr design process (8 /10)
--2, You should not use the screenshot of your html implementation as your wireframes.
+### Grumblr design process (10/10)
 
 ### Demonstrates basic familiarity with HTML and CSS
 
@@ -20,7 +19,7 @@ Commit graded: 3987c06f57c7743092751a45b089fb70c8a3af69
 ### Additional feedback
 
 --- 
-#### Total score (46 /50)
+#### Total score (48 /50)
 
 ---
 
