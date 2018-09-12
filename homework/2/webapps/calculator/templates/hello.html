@@ -1,0 +1,53 @@
+<!-- {% if input_value %}
+<h1>Hello, {{person_name}}!</h1>
+{% endif %}
+
+<form action="/calculator/c.html" method="get">
+  Enter a name: <input type="text" name="username">
+                <input type="submit">
+  {% csrf_token %}
+</form> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<link rel="stylesheet" type="text/css" href="/static/ui.css">
+</head>
+<body>
+	<div>
+		<form action="/calculator/virtual.html" method="get">
+			{% if digit %}
+			<input type="text" name="textbox" class="textbox" value="{{digit}}">
+			{% else %}
+			<input type="text" name="textbox" class="textbox" value="0">
+			{% endif %}
+
+			<div>
+				<input type="submit" name="digit" class="btn green" value="1">
+				<input type="submit" name="digit" class="btn green" value="2">
+				<input type="submit" name="digit" class="btn green" value="3">
+				<input type="submit" name="operator" class="btn red" value="​+">
+			</div>
+			<div>
+				<input type="submit" name="digit" class="btn green" value="4">
+				<input type="submit" name="digit" class="btn green" value="5">
+				<input type="submit" name="digit" class="btn green" value="6">
+				<input type="submit" name="operator" class="btn red" value="-">
+			</div>
+			<div>
+				<input type="submit" name="digit" class="btn green" value="7">
+				<input type="submit" name="digit" class="btn green" value="8">
+				<input type="submit" name="digit" class="btn green" value="9">
+				<input type="submit" name="operator" class="btn red" value="​x">
+			</div>
+			<div>
+				<input type="submit" name="42" class="btn dummy" value="42">
+				<input type="submit" name="digit" class="btn green" value="0">
+				<input type="submit" name="operator" class="btn green" value="​=">
+				<input type="submit" name="operator" class="btn red" value="&divide">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
