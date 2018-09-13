@@ -1,3 +1,5 @@
+The reason why I use GET method in this application is that although POST is more secure, we don't really need that much security in this calculator application. GET request let users see the values of every variable in the request so that users can have a more clear vision on the working process of the calculator.
+
 Here is some illustration on how this calculator deal with any error situations or ambiguous user behaviors.
 
 Error situations:

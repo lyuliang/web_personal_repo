@@ -119,8 +119,6 @@ def isValidRequest(request):
 		return False
 	if not isValidText(request.GET.get('operand1')):
 		return False
-	if request.GET.get('method') == 'post':
-		return False
 
 	return True
 
