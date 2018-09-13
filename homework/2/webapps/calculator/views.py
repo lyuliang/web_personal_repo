@@ -36,21 +36,31 @@ def calc(request):
 		print(len(request.GET['prev_operator']))	#
 		print(ord(request.GET['prev_operator'][0])) #
 
-		if len(request.GET['prev_operator']) == 2:
-			if ord(request.GET['prev_operator'][1]) == 43:	#'+'
-				context['display'] = str(int(request.GET['operand1']) + int(request.GET['textbox']))
-			elif ord(request.GET['prev_operator'][1]) == 215:	#'*'
-				context['display'] = str(int(int(request.GET['operand1']) * int(request.GET['textbox'])))
-			elif ord(request.GET['prev_operator'][1]) == 61:	#'='
-				context['display'] = request.GET['textbox']
+		if request.GET.get('status') == 'after_op':
+			context['display'] = request.GET['textbox']
 
-		elif len(request.GET['prev_operator']) == 1:
-			if ord(request.GET['prev_operator'][0]) == 43:	#'+'
-				context['display'] = str(int(request.GET['operand1']) + int(request.GET['textbox']))
-			elif ord(request.GET['prev_operator'][0]) == 8722:	#'-'
-				context['display'] = str(int(request.GET['operand1']) - int(request.GET['textbox']))
-			elif ord(request.GET['prev_operator'][0]) == 247:	#'/'
-				context['display'] = str(int(int(request.GET['operand1']) / int(request.GET['textbox'])))
+		else:
+
+			if len(request.GET['prev_operator']) == 2:
+				# if ord(request.GET['prev_operator'][1]) == 43:	#'+'
+				if request.GET['prev_operator'][1] == '+':
+					context['display'] = str(int(request.GET['operand1']) + int(request.GET['textbox']))
+				#elif ord(request.GET['prev_operator'][1]) == 215:	#'*'
+				elif request.GET['prev_operator'][1] == '×':
+					context['display'] = str(int(int(request.GET['operand1']) * int(request.GET['textbox'])))
+				elif ord(request.GET['prev_operator'][1]) == 61:	#'='
+					context['display'] = request.GET['textbox']
+
+			elif len(request.GET['prev_operator']) == 1:
+				if ord(request.GET['prev_operator'][0]) == 43:	#'+'
+					context['display'] = str(int(request.GET['operand1']) + int(request.GET['textbox']))
+				elif ord(request.GET['prev_operator'][0]) == 8722:	#'-'
+					context['display'] = str(int(request.GET['operand1']) - int(request.GET['textbox']))
+				elif ord(request.GET['prev_operator'][0]) == 247:	#'/'
+					if int(request.GET['textbox']) == 0:
+						context['display'] = 'Error'
+					else:
+						context['display'] = str(int(int(request.GET['operand1']) / int(request.GET['textbox'])))
 
 		if len(request.GET['operator']) == 2:
 			if ord(request.GET['operator'][1]) == 61:
@@ -59,7 +69,24 @@ def calc(request):
 				context['current_status'] = 'after_op'
 		else:
 			context['current_status'] = 'after_op'
-			
+
+			# if request.GET['prev_operator'] == '+':
+			# 	context['display'] = str(int(request.GET['operand1']) + int(request.GET['textbox']))
+			# elif request.GET['prev_operator'] == '−':
+			# 	context['display'] = str(int(request.GET['operand1']) - int(request.GET['textbox']))
+			# elif request.GET['prev_operator'] == '×':
+			# 	context['display'] = str(int(int(request.GET['operand1']) * int(request.GET['textbox'])))
+			# elif request.GET['prev_operator'] == '÷':
+			# 	context['display'] = str(int(int(request.GET['operand1']) / int(request.GET['textbox'])))
+			# elif request.GET['prev_operator'] == '=':
+			# 	context['display'] = request.GET['textbox']
+
+		# if request.GET['prev_operator'] == '=':
+		# 	context['current_status'] = 'after_equal'
+		# else:
+		# 	context['current_status'] = 'after_op'
+
+	
 		context['first_operand'] = context['display']
 		context['operator'] = request.GET['operator']
 
