@@ -1,9 +1,0 @@
-{% if person_name %}
-<h1>Hello, {{person_name}}!</h1>
-{% endif %}
-
-<form action="/calculator/c.html" method="get">
-  Enter a name: <input type="text" name="username">
-                <input type="submit">
-  {% csrf_token %}
-</form>
