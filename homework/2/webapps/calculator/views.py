@@ -39,7 +39,7 @@ def calc(request):
 			context['display'] = 'Error'
 		elif request.GET.get('status') == 'after_op':
 			context['display'] = request.GET['textbox']
-		elif request.GET.get('status') == 'error':
+		elif request.GET.get('textbox') == 'Error':
 			context['display'] = 'Error'
 		else:
 			if '+' in request.GET['prev_operator']:
