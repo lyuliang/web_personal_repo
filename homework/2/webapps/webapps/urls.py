@@ -20,5 +20,5 @@ import calculator.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('calculator/virtual.html', calculator.views.calc),
+    path('', calculator.views.calc),
 ]
