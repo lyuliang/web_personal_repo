@@ -1,13 +1,3 @@
-<!-- {% if input_value %}
-<h1>Hello, {{person_name}}!</h1>
-{% endif %}
-
-<form action="/calculator/c.html" method="get">
-  Enter a name: <input type="text" name="username">
-                <input type="submit">
-  {% csrf_token %}
-</form> -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,35 +7,55 @@
 <body>
 	<div>
 		<form action="/calculator/virtual.html" method="get">
-			{% if digit %}
-			<input type="text" name="textbox" class="textbox" value="{{digit}}">
-			{% else %}
-			<input type="text" name="textbox" class="textbox" value="0">
+			<input type="text" name="textbox" class="textbox" value="{{display}}">
+			<input type="hidden" name="status" value="{{current_status}}">
+
+			{% if current_status == "idle" %}
+			<input type="hidden" name="prev_operator" value="&#43">
+			<input type="hidden" name="operand1" value="0">
+
+			{% elif current_status == "before_op" %}
+			<input type="hidden" name="prev_operator" value="{{operator}}">
+			<input type="hidden" name="operand1" value="{{first_operand}}">
+
+			{% elif current_status == "after_op" %}
+			<input type="hidden" name="prev_operator" value="{{operator}}">
+			<input type="hidden" name="operand1" value="{{first_operand}}">
+
+			{% elif current_status == "after_equal" %}
+			<input type="hidden" name="prev_operator" value="&#43">
+			<input type="hidden" name="operand1" value="0">
 			{% endif %}
 
 			<div>
 				<input type="submit" name="digit" class="btn green" value="1">
 				<input type="submit" name="digit" class="btn green" value="2">
 				<input type="submit" name="digit" class="btn green" value="3">
-				<input type="submit" name="operator" class="btn red" value="​+">
+				<input type="submit" name="operator" class="btn red" value="​&#43"> <!-- + -->
 			</div>
 			<div>
 				<input type="submit" name="digit" class="btn green" value="4">
 				<input type="submit" name="digit" class="btn green" value="5">
 				<input type="submit" name="digit" class="btn green" value="6">
-				<input type="submit" name="operator" class="btn red" value="-">
+				<input type="submit" name="operator" class="btn red" value="&#8722"> <!-- - -->
 			</div>
 			<div>
 				<input type="submit" name="digit" class="btn green" value="7">
 				<input type="submit" name="digit" class="btn green" value="8">
 				<input type="submit" name="digit" class="btn green" value="9">
-				<input type="submit" name="operator" class="btn red" value="​x">
+				<input type="submit" name="operator" class="btn red" value="​&#215"> <!-- x -->
 			</div>
 			<div>
 				<input type="submit" name="42" class="btn dummy" value="42">
 				<input type="submit" name="digit" class="btn green" value="0">
-				<input type="submit" name="operator" class="btn green" value="​=">
-				<input type="submit" name="operator" class="btn red" value="&divide">
+				<input type="submit" name="operator" class="btn green" value="​&#61"> <!-- = -->
+				<input type="submit" name="operator" class="btn red" value="&#247"> <!-- / -->
+			</div>
+			<div>
+				<input type="text" name="debug" class="textbox" value="1st operand:{{first_operand}}">
+				<input type="text" name="debug" class="textbox" value="{{current_status}}">
+				<input type="text" name="debug" class="textbox" value="​{{operator}}">
+				<input type="text" name="debug" class="textbox" value="{{display}}">
 			</div>
 		</form>
 	</div>
