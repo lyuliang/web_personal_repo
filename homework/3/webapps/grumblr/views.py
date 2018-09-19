@@ -80,12 +80,15 @@ def home(request):
 
 	if 'post_box' in request.POST:
 		if request.POST['post_box']:
-
-		 	new_post = Post(text=request.POST['post_box'])
-		 	new_post.user = user	 	
-		 	new_post.time = datetime.datetime.now()
-		 	new_post.save()
-		 	context['error'] = ''
+			if len(request.POST['post_box']) > 42:
+				context['error'] = 'Post should be less than 42 characters!\
+									 (delete this message to continue)'
+			else:
+			 	new_post = Post(text=request.POST['post_box'])
+			 	new_post.user = user	 	
+			 	new_post.time = datetime.datetime.now()
+			 	new_post.save()
+			 	context['error'] = ''
 
 	context['current_user'] = user
 	context['PostList'] = Post.objects.all().order_by('-time')
