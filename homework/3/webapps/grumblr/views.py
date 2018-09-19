@@ -57,8 +57,6 @@ def checkLogin(request):
 		return 'ready'
 
 def log(request):
-	if request.path == '/':
-		return redirect('/login')
 	context = {}
 	context['error'] = checkLogin(request)
 	if context['error'] != 'ready':
@@ -73,7 +71,38 @@ def log(request):
 		context['error'] = 'Invalid username or password!'
 		return render(request, 'grumblr/login.html', context)
 
+@login_required
+def home(request):
+	context = {}
+	user = request.user
 
+	if 'post_box' in request.POST:
+		if request.POST['post_box']:
+
+		 	new_post = Post(text=request.POST['post_box'])
+		 	new_post.user = user	 	
+		 	new_post.time = datetime.datetime.now()
+		 	new_post.save()
+		 	context['error'] = ''
+
+	context['current_user'] = user
+	context['PostList'] = Post.objects.all()
+
+	return render(request, 'grumblr/global.html', context)
+
+@login_required
+def profile(request, name):
+	context = {}
+	userSpecified = User.objects.get(username__exact=name)
+	context['PostList'] = Post.objects.filter(user=userSpecified)
+	context['specified_user'] = userSpecified
+	context['current_username'] = request.user.username
+	return render(request, 'grumblr/profile.html', context)
+
+def log_out(request):
+	context = {}
+	logout(request=request)
+	return render(request, 'grumblr/login.html', context)
 
 
 
