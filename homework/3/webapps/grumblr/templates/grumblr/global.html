@@ -29,9 +29,9 @@
 						<form class="form-group form-stream" action="../global/" method="post"> 
 							<p class="share_hint">Share your life here:</p>
 							{% if error %}
-							<textarea type="text" class="post_box" placeholder="Less than 42 characters..." name="post_box">{{error}}</textarea>
+							<textarea class="post_box" placeholder="Less than 42 characters..." name="post_box">{{error}}</textarea>
 							{% else %}
-							<textarea type="text" class="post_box" placeholder="Less than 42 characters..." name="post_box"></textarea>
+							<textarea class="post_box" placeholder="Less than 42 characters..." name="post_box"></textarea>
 							{% endif %}
 							<input type="hidden" name="current_user" value="{{current_user.username}}">
 							<button type="submit" class="btn button-post">Post</button>
@@ -44,7 +44,7 @@
 				<div class="top-right">
 					<p class="gru">GRUMBLR</p>
 					<a href="../logout/"><p class="logout">Log out</p></a>
-					<a href="../profile/{{current_user.username}}"><button class="btn button-stream">View My<br>Profile</button></a>			
+					<a class="btn button-stream" href="../profile/{{current_user.username}}">View My<br>Profile</a>		
 				</div>
 			</div>
 		</div>

@@ -39,6 +39,10 @@ p {
     right: 50px;
     top: 150px;
 }
+.word-wrap {
+	word-break: break-all;
+	word-wrap: break-word;
+}
 .button-stream {
 	background-color: yellow;
 	font-weight: bold;

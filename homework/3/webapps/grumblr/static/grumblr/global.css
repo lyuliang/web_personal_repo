@@ -52,6 +52,8 @@ p {
     top: 200px;
     text-align: center;
     word-wrap: break-word;
+    color: black;
+    text-decoration-color: black;
 }
 .form-stream {
 	position: sticky;
