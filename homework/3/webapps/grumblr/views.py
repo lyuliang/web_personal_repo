@@ -45,7 +45,33 @@ def signup(request):
 	login(request=request, user=user)
 	return redirect('/global')
 
+def checkLogin(request):
+	if not 'username' in request.POST:
+	   # and not 'password' in request.POST:
+		return ''
+	if not request.POST['username']:
+		return 'Fill in username!'
+	if not request.POST['password']:
+		return 'Fill in password'
+	else:
+		return 'ready'
 
+def log(request):
+	if request.path == '/':
+		return redirect('/login')
+	context = {}
+	context['error'] = checkLogin(request)
+	if context['error'] != 'ready':
+		return render(request, 'grumblr/login.html', context)
+
+	user = authenticate(username=request.POST['username'], password=request.POST['password'])
+
+	if user is not None:
+		login(request=request, user=user)
+		return redirect('/global')
+	else:
+		context['error'] = 'Invalid username or password!'
+		return render(request, 'grumblr/login.html', context)
 
 
 
