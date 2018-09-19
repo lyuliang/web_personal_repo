@@ -57,6 +57,8 @@ def checkLogin(request):
 		return 'ready'
 
 def log(request):
+	if request.path == '/':
+		return redirect('/login')
 	context = {}
 	context['error'] = checkLogin(request)
 	if context['error'] != 'ready':
@@ -86,7 +88,7 @@ def home(request):
 		 	context['error'] = ''
 
 	context['current_user'] = user
-	context['PostList'] = Post.objects.all()
+	context['PostList'] = Post.objects.all().order_by('-time')
 
 	return render(request, 'grumblr/global.html', context)
 
@@ -94,7 +96,7 @@ def home(request):
 def profile(request, name):
 	context = {}
 	userSpecified = User.objects.get(username__exact=name)
-	context['PostList'] = Post.objects.filter(user=userSpecified)
+	context['PostList'] = Post.objects.filter(user=userSpecified).order_by('-time')
 	context['specified_user'] = userSpecified
 	context['current_username'] = request.user.username
 	return render(request, 'grumblr/profile.html', context)
