@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'grumblr/profile.css' %}"/>
+    <title>Grumblr - Profile of {{specified_user}}</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<div class="global">
+		<div class="row global">
+			<div class="col-9 black">
+				<div class="row global">
+					<div class="col-8 global left_column">
+			
+						{% for Post in PostList %}
+						<div class="jumbotron box">
+						  <a class="name" href="../profile/{{Post.user.username}}">{{Post.user.username}}</a>
+						  <p class="lead">{{Post.text}}</p>
+						  <!-- <img src="images/zeyu.jpg"> -->
+						  <hr class="my-3">
+						  <p>{{Post.time}}</p>
+						</div>
+						{% endfor %}
+
+					</div>
+					<div class="col-4 global">
+						<div class="jumbotron profile">
+							<p class="username">{{specified_user.username}} 's</p>
+							<p class="firstname">profile</p>
+							<br>
+							<p class="firstname">First Name: {{specified_user.first_name}}</p>
+							<p class="firstname">Last Name: {{specified_user.last_name}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 white">
+				<div class="top-right">
+					<p class="gru">GRUMBLR</p>
+					<a class="logout" href="../logout/">Log out</a>
+					<input type="hidden" name="current_username" value="{{current_username}}">
+					<a class="btn button-stream button-view" href="../profile/{{current_username}}">View My<br>Profile</a>
+					<a class="btn button-stream button-back" href="../global">Back to<br>stream</a>
+				</div>				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'grumblr/login.css' %}"/>
+        <title>Grumblr - Log in</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="top-blank"></div>
+        <div class="signup-top">
+            <p class="gru-signup">GRUMBLR</p>
+            <p class="share-signup">Share the highlights of your life</p>
+        </div>
+        <div class="signup-middle">
+            <form action="../login/" method="post">
+                <p class="signup_hint">Log &nbsp;in &nbsp;to &nbsp;your &nbsp;GRUMBLR</p>
+                <p class="error">{{error}}</p>
+                <div class="row1">
+                    <p class="input-label">Username</p>
+                    <input type="text" class="input-text" name="username">
+                </div>
+                <div class="row1">
+                    <p class="input-label">Password</p>
+                    <input type="text" class="input-text" name="password">
+                </div>
+                <div>
+                    <input type="submit" class="btn button-log_sign" value="Log in">
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+        <div>
+            <a href="../signup"><p class="blue-underline">No account yet? Sign up for FREE!</p></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'grumblr/signup.css' %}"/>
+        <title>Grumblr - Sign up</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="top-blank"></div>
+        <div class="signup-top">
+            <p class="gru-signup">GRUMBLR</p>
+            <p class="share-signup">Share the highlights of your life</p>
+        </div>
+        <div class="signup-middle">
+            <form action="../signup/" method="post">
+                <p class="signup_hint">sign &nbsp;up &nbsp;your &nbsp;GRUMBLR</p>
+                <p class="error">{{error}}</p>
+                <div class="row1">
+                    <p class="input-label">Username</p>
+                    <input type="text" name="username" class="input-text">
+                </div>
+                <div class="row1">
+                    <p class="input-label">First Name</p>
+                    <input type="text" name="first_name" class="input-firstname">
+                    <p class="lastname-label">Last Name</p>
+                    <input type="text" name="last_name" class="input-lastname">
+                </div>
+                <div class="row1">
+                    <p class="input-label">Password</p>
+                    <input type="text" name="password" class="input-text">
+                </div>
+                <div class="row1">
+                    <p class="input-label">Confirm Password</p>
+                    <input type="text" name="confirm_password" class="input-text">
+                </div>
+                <div>
+                    <input type="submit" class="btn button-log_sign" value="Sign up">
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+        <div>
+            <a href="../login"><p class="blue-underline">Have an account? Log in</p></a>
+        </div>
+    </body>
+</html>

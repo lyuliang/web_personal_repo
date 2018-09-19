@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'grumblr/global.css' %}"/>
+    <title>Grumblr - Global Stream</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<div class="global">
+		<div class="row global">
+			<div class="col-9 black">
+				<div class="row global">
+					<div class="col-8 global left_column">
+
+						{% for Post in PostList %}
+						<div class="jumbotron box word-wrap">
+						  <a class="name" href="../profile/{{Post.user.username}}">{{Post.user.username}}</a>
+						  <p class="lead">{{Post.text}}</p>
+						  <!-- <img src="images/zeyu.jpg"> -->
+						  <hr class="my-3">
+						  <p>{{Post.time}}</p>
+						</div>
+						{% endfor %}
+
+					</div>
+					<div class="col-4 global">
+						<form class="form-group form-stream" action="../global/" method="post"> 
+							<p class="share_hint">Share your life here:</p>
+							{% if error %}
+							<textarea type="text" class="post_box" placeholder="Less than 42 characters..." name="post_box">{{error}}</textarea>
+							{% else %}
+							<textarea type="text" class="post_box" placeholder="Less than 42 characters..." name="post_box"></textarea>
+							{% endif %}
+							<input type="hidden" name="current_user" value="{{current_user.username}}">
+							<button type="submit" class="btn button-post">Post</button>
+							{% csrf_token %}
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 white">
+				<div class="top-right">
+					<p class="gru">GRUMBLR</p>
+					<a href="../logout/"><p class="logout">Log out</p></a>
+					<a href="../profile/{{current_user.username}}"><button class="btn button-stream">View My<br>Profile</button></a>			
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

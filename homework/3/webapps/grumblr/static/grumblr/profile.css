@@ -1,0 +1,98 @@
+p {
+	margin: 0;
+}
+.global {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*height: 1000px;*/
+	position: relative;
+}
+.black {
+	background-color: black;
+	height: 100%;
+}
+.white {
+	background-color: white;
+	padding: 0;
+}
+.top-right {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+}
+.gru {
+	position: absolute;
+	top: 60px;
+	left: -20px;
+	color: #0062c8;
+	font-weight: bold;
+	font-size: 60px;
+	font-family: "Calibri", Sans-serif;
+}
+.logout {
+	color: #0062c8;
+    font-size: 26px;
+    text-decoration: underline;
+    position: absolute;
+    right: 50px;
+    top: 150px;
+}
+.button-stream {
+	background-color: yellow;
+	font-weight: bold;
+	font-size: 25px;
+    text-decoration: underline;
+    width: 170px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+}
+.button-view {
+	top: 200px;
+	color: black;
+}
+.button-back {
+	top: 330px;
+	color: black;
+}
+.box {
+	padding: 20px;
+	/*width: 90%;*/
+	margin-right: 50px;
+	margin-bottom: 10px;
+}
+.name {
+	font-size: 20px;
+	text-decoration: underline;
+
+}
+img {
+	width: 100%;
+	height: auto;
+	max-height: 300px;
+	max-width: 80%;
+	margin-top: 10px;
+}
+.left_column {
+	padding-top: 50px;
+	padding-left: 60px;
+}
+.profile {
+	background-color: black;
+	color: yellow;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 70px;
+	margin-left: 20px;	
+	font-family: "Calibri", Sans-serif;	
+	text-align: center;	
+}
+.username {
+	font-size: 70px;
+}
+.firstname {
+	font-size: 28px;
+	/*font-weight: bold;*/
+}

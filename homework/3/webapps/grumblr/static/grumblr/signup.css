@@ -50,7 +50,17 @@ div {
     padding-top: 40px;
     left: 460px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 0;
+}
+.error {
+    color: red;
+    font-family: "Calibri", Sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 45%;
 }
 .row1 {
     position: relative;
@@ -97,6 +107,7 @@ div {
     right: 250px;
     width: 200px;
     height: 60px;
+    font-size: 40px;
 }
 .signup-bottom {
     height: 100px;
