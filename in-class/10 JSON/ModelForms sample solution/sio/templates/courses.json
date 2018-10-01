@@ -1,0 +1,11 @@
+[
+{% for course in courses %}
+{
+  "course" : { "course number" : "{{course.course_number}}",
+               "course name" : "{{course.course_name}}",
+                "instructor" : "{{course.instructor}}",
+                "students"   : "{{course.students.all}}"
+  }
+} {% if not forloop.last %} , {% endif %}
+{% endfor %}
+]

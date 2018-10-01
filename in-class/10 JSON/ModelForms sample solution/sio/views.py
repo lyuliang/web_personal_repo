@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.db import transaction
 
 from sio.forms import *
+from sio.models import *
 
 
 def make_view(request, messages=None, create_student_form=CreateStudentForm(), create_course_form=CreateCourseForm(),
@@ -73,6 +74,8 @@ def get_sample_students(request):
 
 # TODO: Complete this action to generate a JSON response containing all courses
 def get_all_courses(request):
-    return None
+    courses = Course.objects.all()
+    context = {'courses' : courses}
+    return render(request, 'courses.json', context, content_type='application/json')
 
 
