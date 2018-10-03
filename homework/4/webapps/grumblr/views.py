@@ -25,14 +25,10 @@ def home(request):
 	if not form.is_valid():
 
 		context['form'] = form
-		print('not valid')
-		print(form)
-		print(new_post.time)
 		return render(request, 'grumblr/global.html', context)
 
 	form.save()
 	context['PostList'] = Post.objects.all().order_by('-time')
-	print('valid')
 	context['form'] = PostForm()
 	return render(request, 'grumblr/global.html', context)
 
@@ -42,7 +38,6 @@ def profile(request, name):
 	userSpecified = User.objects.get(username__exact=name)
 	context['PostList'] = Post.objects.filter(user=userSpecified).order_by('-time')
 	context['specified_user'] = userSpecified.profile
-	print(context['specified_user'].first_name+'lalala')
 	context['specified_username'] = userSpecified.username
 	context['current_username'] = request.user.username
 	return render(request, 'grumblr/profile.html', context)
@@ -62,6 +57,4 @@ def follower(request):
 	context['followers'] = followers
 	context['current_user'] = request.user
 	context['PostList'] = Post.objects.filter(user__in= followers).order_by('-time')
-	print(context['PostList'])
-	print('xx')
 	return render(request, 'grumblr/follower.html', context)
