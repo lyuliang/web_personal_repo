@@ -8,10 +8,19 @@
 {% endblock %}
 
 {% block right_area %}
-
+<div class="col-4 global">
+    <div class="header">My Follows</div>
+    <div class="list">
+    {% for follower in followers %}
+        <a class="follow_name" href="{% url 'profile' follower %}">{{follower.username}}</a>
+        <br>
+    {% endfor %}
+    </div>
+</div>
 {% endblock%}
 
 {% block sidebuttons %}
     <a class="btn button-stream" href="{% url 'profile' current_user.username %}">View My<br>Profile</a>
+    <a class="btn button-stream button-back" href="{% url 'global' %}">Back to<br>Stream</a>
 {% endblock %}
 

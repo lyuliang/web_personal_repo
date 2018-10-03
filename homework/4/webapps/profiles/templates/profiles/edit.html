@@ -40,5 +40,6 @@
 {% block sidebuttons %}
     <a class="btn button-stream button-view" href="{% url 'profile' current_user.username %}">View My<br>Profile</a>
     <a class="btn button-stream button-back" href="{% url 'global' %}">Back to<br>Stream</a>
+    <a class="btn button-stream button-follower" href="{% url 'follower'%}">Follower<br>Stream</a>
 {% endblock %}
 

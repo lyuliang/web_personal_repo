@@ -60,7 +60,8 @@ def follower(request):
 	context = {}
 	followers = request.user.profile.followers.all()
 	context['followers'] = followers
-
+	context['current_user'] = request.user
 	context['PostList'] = Post.objects.filter(user__in= followers).order_by('-time')
 	print(context['PostList'])
+	print('xx')
 	return render(request, 'grumblr/follower.html', context)

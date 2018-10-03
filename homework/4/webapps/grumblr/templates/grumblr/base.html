@@ -16,6 +16,7 @@
                         {% block left_area %}
 						{% for Post in PostList %}
 						<div class="jumbotron box word-wrap">
+                          <img class="small_img" src="{% url 'get_profile_image' Post.user.username %}" alt = " ">
 						  <a class="name" href="{% url 'profile' Post.user.username %}">{{Post.user.username}}</a>
 						  <p class="lead">{{Post.text}}</p>
 						  <img src="{% url 'get_post_image' Post.id %}" alt = " ">

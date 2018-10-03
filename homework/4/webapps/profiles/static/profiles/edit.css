@@ -141,6 +141,10 @@ p {
 	top: 330px;
 	color: black;
 }
+.button-follower {
+	top: 460px;
+	color: black;
+}
 .name {
 	font-size: 20px;
 	text-decoration: underline;

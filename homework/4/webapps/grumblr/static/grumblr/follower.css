@@ -56,6 +56,10 @@ p {
     color: black;
     text-decoration-color: black;
 }
+.button-back {
+	top: 330px;
+	color: black;
+}
 .form-stream {
 	position: sticky;
 	position: -webkit-sticky;
@@ -90,29 +94,16 @@ p {
 	word-break: break-all;
 	word-wrap: break-word;
 }
-.button-follow {
-	background-color: yellow;
-    color: black;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 10px;
-    border-style: solid;
-    width: 100px;
-    height: 70px;
-    /*position: absolute;*/
-    /*top: 500px;*/
-    /*right: 60px;*/
+.name {
+	font-size: 20px;
+	text-decoration: underline;
+
 }
 .box {
 	padding: 20px;
 	/*width: 90%;*/
 	margin-right: 50px;
 	margin-bottom: 10px;
-}
-.name {
-	font-size: 20px;
-	text-decoration: underline;
-
 }
 img {
 	width: 100%;
@@ -121,7 +112,30 @@ img {
 	max-width: 80%;
 	margin-top: 10px;
 }
+.small_img {
+	width: 40px;
+	height: 40px;
+
+}
 .left_column {
 	padding-top: 50px;
 	padding-left: 60px;
+}
+.header {
+	font-size: 50px;
+	font-weight: bold;
+	color: yellow;
+	width: 100%;
+	position: relative;
+	margin-left: 80px;
+	margin-top: 40px;
+}
+.follow_name {
+	text-align: center;
+	color: yellow;
+	font-size: 40px;
+	text-decoration: underline;
+}
+.list {
+	text-align: center;
 }

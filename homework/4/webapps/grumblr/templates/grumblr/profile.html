@@ -21,7 +21,7 @@
         <p class="firstname">Last Name: {{specified_user.last_name}}</p>
         <p class="firstname">Age: {{specified_user.age}}</p>
         <p class="firstname">Bio: {{specified_user.bio}}</p>
-
+        <br>
         <a class="btn button-follow" href="{% url 'add_follower' specified_username%}">Follow</a>
         <a class="btn button-follow" href="{% url 'remove_follower' specified_username%}">Unfollow</a>
         {% if result %}
@@ -35,6 +35,7 @@
     <a class="btn button-stream button-view" href="{% url 'profile' current_username %}">View My<br>Profile</a>
     <a class="btn button-stream button-back" href="{% url 'global' %}">Back to<br>Stream</a>
     <a class="btn button-stream button-edit" href="{% url 'edit' %}">Edit My<br>Profile</a>
+    <a class="btn button-stream button-follower" href="{% url 'follower'%}">Follower<br>Stream</a>
 {% endblock %}
 
 
