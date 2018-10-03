@@ -11,8 +11,9 @@ def checkSignup(request):
 	#initial
 	if (not 'username' in request.POST):
 		return ''
-
-	if not request.POST['username']:
+# tmp = request.POST.get('username')
+	# if not tmp
+	if not 'username' in request.POST or not request.POST['username']:
 		return 'Fill in username!'
 	if not request.POST['password']:
 		return 'Fill in password!'

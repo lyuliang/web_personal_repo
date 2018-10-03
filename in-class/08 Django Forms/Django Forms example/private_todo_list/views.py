@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 
@@ -72,6 +72,8 @@ def register(request):
     if not form.is_valid():
         return render(request, 'private-todo-list/register.html', context)
 
+    send
+
     # If we get here the form data was valid.  Register and login the user.
     new_user = User.objects.create_user(username=form.cleaned_data['username'],
                                         password=form.cleaned_data['password1'])
@@ -81,4 +83,4 @@ def register(request):
     new_user = authenticate(username=form.cleaned_data['username'], \
                             password=form.cleaned_data['password1'])
     login(request, new_user)
-    return redirect('/private-todo-list/')
+    return redirect(reverse(home))
