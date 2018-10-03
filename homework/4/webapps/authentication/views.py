@@ -22,11 +22,6 @@ def signup(request):
         return render(request, 'authentication/signup.html', context)
 
     form = SignupForm(request.POST)
-    for i in form.errors:
-        print(i)
-    print('xxx')
-    for j in form.visible_fields():
-        print(j.errors)
     context['form'] = form
 
     if not form.is_valid():
@@ -45,6 +40,7 @@ def signup(request):
     to Verify your email address and complete the
     registration of your account:
     http://%s%s
+    You will be redirected to Login page after verification.
     """ % (request.get_host(),
            reverse('verify', args=(new_user.username, token, first_name, last_name)))
     send_mail(subject="Verify your email address for Grumblr",
@@ -58,16 +54,13 @@ def signup(request):
 def verify(request, username, token, first_name, last_name):
     new_user = User.objects.get(username=username)
     if new_user:
-        print('new_user')
         if default_token_generator.check_token(new_user, token):
-            print('ok')
             new_user.is_active = True
             new_profile = Profile.objects.create(user=new_user)
             new_profile.first_name = first_name
             new_profile.last_name = last_name
             new_profile.save()
             return redirect(reverse('login'))
-    print('not ok')
     return redirect(reverse('signup'))
 
 

@@ -17,18 +17,10 @@ def edit(request):
 
 	my_profile = Profile.objects.get(user=request.user)
 	if request.method == 'GET':
-		print('get')
 		context['form'] = ProfileForm(instance=my_profile)
-		print('yes')
-		for field in context['form'].visible_fields():
-			print(field.name)
-			print(field.label)
-			print(field.label_tag)
 
 		return render(request, 'profiles/edit.html', context)
-	print('here')
 	form = ProfileForm(request.POST, request.FILES, instance=my_profile)
-
 	if not form.is_valid():
 		context['form'] = form
 		return render(request, 'profiles/edit.html', context)
@@ -40,8 +32,7 @@ def edit(request):
 
 @login_required
 def get_profile_image(request, name):
-	profile = get_object_or_404(Profile, user = name)
-	print(profile.first_name + profile.last_name)
+	profile = Profile.objects.get(user=User.objects.get(username=name))
 	if not profile.image:
 		raise Http404
 	content_type = guess_type(profile.image.name)

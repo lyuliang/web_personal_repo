@@ -63,7 +63,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'grumblr/templates/grumblr/'
+            'grumblr/templates/grumblr/',
+            'authentication/templates/authentication/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {

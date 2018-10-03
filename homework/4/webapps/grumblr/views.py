@@ -20,6 +20,7 @@ def home(request):
 		return render(request, 'grumblr/global.html', context)
 
 	new_post = Post(user=request.user, time=datetime.datetime.now())
+	new_post.with_image = 'image' in request.FILES.keys()
 	form = PostForm(request.POST, request.FILES, instance=new_post)
 
 	if not form.is_valid():

@@ -8,6 +8,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='post_images/',
                               blank=True,
                               null=True)
+    with_image = models.BooleanField(default=False)
 
     def __str__(self):
         return self.text

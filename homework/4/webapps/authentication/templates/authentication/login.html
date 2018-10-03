@@ -4,7 +4,7 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
         <link rel="stylesheet" href="{% static 'authentication/login.css' %}"/>
-        <title>Grumblr - Log in</title>
+        <title>{% block title %}Grumblr - Log in{% endblock %}</title>
         <meta charset="UTF-8">
     </head>
     <body>
@@ -14,6 +14,7 @@
             <p class="share-signup">Share the highlights of your life</p>
         </div>
         <div class="signup-middle">
+            {% block content %}
             <form action="{% url 'login' %}" method="post">
                 <p class="signup_hint">Log &nbsp;in &nbsp;to &nbsp;your &nbsp;GRUMBLR</p>
 
@@ -27,12 +28,15 @@
                     <div class="input-text">{{ field }}</div>
                 </div>
                 {% endfor %}
+
                 <div>
                     <input type="submit" class="btn button-log_sign" value="Log in">
                 </div>
+                 <a class="reset" href="{% url 'password_reset' %}">Reset Password</a>
                 <input type="hidden" name="next" value="{{ next }}" />
                 {% csrf_token %}
             </form>
+            {% endblock %}
         </div>
         <div>
             <a href="{% url 'signup' %}"><p class="blue-underline">No account yet? Sign up for FREE!</p></a>

@@ -19,7 +19,9 @@
                           <img class="small_img" src="{% url 'get_profile_image' Post.user.username %}" alt = " ">
 						  <a class="name" href="{% url 'profile' Post.user.username %}">{{Post.user.username}}</a>
 						  <p class="lead">{{Post.text}}</p>
+                          {% if Post.with_image == True %}
 						  <img src="{% url 'get_post_image' Post.id %}" alt = " ">
+                          {% endif %}
 						  <hr class="my-3">
 						  <p>{{Post.time}}</p>
 						</div>
