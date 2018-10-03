@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'grumblr/follower.css' %}"/>{% endblock %}
+{% block title %}Grumblr - Follower Stream{% endblock %}
+
+{% block left_area %}
+    {{ block.super }}
+{% endblock %}
+
+{% block right_area %}
+
+{% endblock%}
+
+{% block sidebuttons %}
+    <a class="btn button-stream" href="{% url 'profile' current_user.username %}">View My<br>Profile</a>
+{% endblock %}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'authentication/signup.css' %}"/>
+        <title>Grumblr - Sign up</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="top-blank"></div>
+        <div class="signup-top">
+            <p class="gru-signup">GRUMBLR</p>
+            <p class="share-signup">Share the highlights of your life</p>
+        </div>
+        <div class="signup-middle">
+            <form action="{% url 'signup' %}" method="post">
+                <p class="signup_hint">sign &nbsp;up &nbsp;your &nbsp;GRUMBLR</p>
+                {% for field in form.visible_fields %}
+                <div class="error">{{field.errors}}</div>
+                {% endfor %}
+
+                {% for field in form.visible_fields %}
+
+                <div class="row1">
+                    <p class="input-label">{{ field.label_tag }}</p>
+                    {{ field }}
+                </div>
+
+                {% endfor %}
+
+                <div>
+                    <input type="submit" class="btn button-log_sign" value="Sign up">
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+        <div>
+            <a href="{% url 'login' %}"><p class="blue-underline">Have an account? Log in</p></a>
+        </div>
+    </body>
+</html>

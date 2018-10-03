@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'grumblr/profile.css' %}"/>{% endblock %}
+<link rel="stylesheet" href="{% static 'grumblr/profile.css' %}"/>
+{% block title %}Grumblr - Profile of {{specified_username}}{% endblock %}
+
+{% block left_area %}
+    {{ block.super }}
+{% endblock %}
+
+{% block right_area %}
+<div class="col-4 global">
+    <div class="jumbotron profile">
+        {% if specified_user.image %}
+        <img src="{% url 'get_profile_image' specified_username %}" alt = " ">
+        {% endif %}
+        <p class="username">{{specified_username}} 's</p>
+        <p class="firstname">profile</p>
+        <br>
+        <p class="firstname">First Name: {{specified_user.first_name}}</p>
+        <p class="firstname">Last Name: {{specified_user.last_name}}</p>
+        <p class="firstname">Age: {{specified_user.age}}</p>
+        <p class="firstname">Bio: {{specified_user.bio}}</p>
+
+        <a class="btn button-follow" href="{% url 'add_follower' specified_username%}">Follow</a>
+        <a class="btn button-follow" href="{% url 'remove_follower' specified_username%}">Unfollow</a>
+        {% if result %}
+        <p>{{ result }}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block sidebuttons %}
+    <a class="btn button-stream button-view" href="{% url 'profile' current_username %}">View My<br>Profile</a>
+    <a class="btn button-stream button-back" href="{% url 'global' %}">Back to<br>Stream</a>
+    <a class="btn button-stream button-edit" href="{% url 'edit' %}">Edit My<br>Profile</a>
+{% endblock %}
+
+
+

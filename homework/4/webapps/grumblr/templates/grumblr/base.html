@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+    {% block css %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<div class="global">
+		<div class="row global">
+			<div class="col-9 black">
+				<div class="row global">
+					<div class="col-8 global left_column">
+                        {% block left_area %}
+						{% for Post in PostList %}
+						<div class="jumbotron box word-wrap">
+						  <a class="name" href="{% url 'profile' Post.user.username %}">{{Post.user.username}}</a>
+						  <p class="lead">{{Post.text}}</p>
+						  <img src="{% url 'get_post_image' Post.id %}" alt = " ">
+						  <hr class="my-3">
+						  <p>{{Post.time}}</p>
+						</div>
+						{% endfor %}
+                        {% endblock left_area%}
+                    </div>
+					{% block right_area %}{% endblock %}
+                </div>
+			</div>
+			<div class="col-3 white">
+				<div class="top-right">
+					<p class="gru">GRUMBLR</p>
+					<a href="{% url 'logout' %}"><p class="logout">Log out</p></a>
+                    {% block sidebuttons %}{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
