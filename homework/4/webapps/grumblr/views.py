@@ -36,7 +36,7 @@ def home(request):
 @login_required
 def profile(request, name):
 	context = {}
-	userSpecified = User.objects.get(username__exact=name)
+	userSpecified = get_object_or_404(User, username=name)
 	context['PostList'] = Post.objects.filter(user=userSpecified).order_by('-time')
 	context['specified_user'] = userSpecified.profile
 	context['specified_username'] = userSpecified.username
