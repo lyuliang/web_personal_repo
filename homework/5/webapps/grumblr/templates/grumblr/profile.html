@@ -17,7 +17,7 @@
         {% if specified_user.image %}
         <img src="{% url 'get_profile_image' specified_username %}" alt = " ">
         {% endif %}
-        <p class="username">{{specified_username}} 's</p>
+        <p id="username" class="username">{{specified_username}}</p>
         <p class="firstname">profile</p>
         <br>
         <p class="firstname">First Name: {{specified_user.first_name}}</p>

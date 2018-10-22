@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
 from django.template.loader import render_to_string
-
+from django.shortcuts import get_object_or_404
 
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,12 +20,13 @@ class Post(models.Model):
     def get_posts(time="1970-01-01T00:00+00:00"):
         return Post.objects.filter(time__gt=time).distinct().order_by("-time")
     @staticmethod
-    def get_profile_posts(time="1970-01-01T00:00+00:00"):
-        return Post.objects.filter(time__gt=time).distinct().order_by("-time")
+    def get_profile_posts(user, time="1970-01-01T00:00+00:00"):
+        return Post.objects.filter(user=user, time__gt=time).distinct().order_by("-time")
 
     @staticmethod
-    def get_follower_posts(followers, time="1970-01-01T00:00+00:00"):
-        return Post.objects.filter(time__gt=time, user__in=followers).distinct().order_by("-time")
+    def get_follower_posts(user, time="1970-01-01T00:00+00:00"):
+        followers = user.profile.followers.all()
+        return Post.objects.filter(user__in=followers, time__gt=time).distinct().order_by("-time")
 
     @property
     def html(self):
@@ -41,4 +42,14 @@ class Post(models.Model):
     @staticmethod
     def get_max_time():
         return Post.objects.all().aggregate(Max('time'))['time__max'] or "1970-01-01T00:00+00:00"
+
+    @staticmethod
+    def get_profile_max_time(user):
+        return Post.objects.filter(user=user).aggregate(Max('time'))['time__max'] or "1970-01-01T00:00+00:00"
+
+    @staticmethod
+    def get_follower_max_time(user):
+        followers = user.profile.followers.all()
+        return Post.objects.filter(user__in=followers).aggregate(Max('time'))['time__max'] or "1970-01-01T00:00+00:00"
+
 

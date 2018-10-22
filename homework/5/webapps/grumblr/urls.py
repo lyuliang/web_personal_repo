@@ -9,8 +9,8 @@ urlpatterns = [
 
     path('get_posts/', get_posts, name = 'get_posts'),
     path('get_posts/<str:time>', get_posts, name = 'get_posts'),
-    path('get_profile_posts/', get_profile_posts, name = 'get_profile_posts'),
-    path('get_profile_posts/<str:time>', get_profile_posts, name = 'get_profile_posts'),
+    path('get_profile_posts/<str:name>', get_profile_posts, name = 'get_profile_posts'),
+    path('get_profile_posts/<str:name>/<str:time>', get_profile_posts, name = 'get_profile_posts'),
     path('get_follower_posts/', get_follower_posts, name = 'get_follower_posts'),
     path('get_follower_posts/<str:time>', get_follower_posts, name = 'get_follower_posts'),
 

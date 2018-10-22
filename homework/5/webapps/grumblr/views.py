@@ -49,58 +49,47 @@ def home(request):
 @login_required
 @transaction.atomic
 def get_posts(request, time="1970-01-01T00:00+00:00"):
-	print("\ninit: ", time)
 	max_time = Post.get_max_time()
-
-	print("\nmax_time ", max_time)
-
 	posts = Post.get_posts(time)
-	print("\nposts:\n", posts)
-
 	context = {"max_time": max_time, "posts": posts}
 	return render(request, 'posts.json', context, content_type='application/json')
 
 @login_required
 @transaction.atomic
-def get_profile_posts(request, time="1970-01-01T00:00+00:00"):
-	max_time = Post.get_max_time()
-	posts = Post.get_profile_posts(time)
+def get_profile_posts(request, name, time="1970-01-01T00:00+00:00"):
+	userSpecified = get_object_or_404(User, username=name)
+	max_time = Post.get_profile_max_time(userSpecified)
+	posts = Post.get_profile_posts(userSpecified, time)
 	context = {"max_time": max_time, "posts": posts}
 	return render(request, 'posts.json', context, content_type='application/json')
 
 @login_required
 @transaction.atomic
 def get_follower_posts(request, time="1970-01-01T00:00+00:00"):
-	max_time = Post.get_max_time()
-
-	followers = request.user.profile.followers.all()
-	posts = Post.get_follower_posts(followers, time)
+	print("\n get follower posts\n")
+	max_time = Post.get_follower_max_time(request.user)
+	posts = Post.get_follower_posts(request.user, time)
 	context = {"max_time": max_time, "posts": posts}
 	return render(request, 'posts.json', context, content_type='application/json')
 
 @login_required
 @transaction.atomic
 def add_post(request):
-	print("\nadd a post aaaa\n\n")
-	print("post: ", request.POST)
 	# context = {}
 	# context['current_user'] = request.user
 	new_post = Post(user=request.user, time=datetime.datetime.now())
 	# new_post.with_image = 'image' in request.FILES.keys()
 	form = PostForm(request.POST, request.FILES, instance=new_post)
-
 	if not form.is_valid():
 		raise Http404
 	else:
 		form.save()
 	return HttpResponse("")
 
-
 @login_required
 def profile(request, name):
 	context = {}
 	userSpecified = get_object_or_404(User, username=name)
-	context['PostList'] = Post.objects.filter(user=userSpecified).order_by('-time')
 	context['specified_user'] = userSpecified.profile
 	context['specified_username'] = userSpecified.username
 	context['current_username'] = request.user.username
@@ -120,5 +109,4 @@ def follower(request):
 	followers = request.user.profile.followers.all()
 	context['followers'] = followers
 	context['current_user'] = request.user
-	context['PostList'] = Post.objects.filter(user__in= followers).order_by('-time')
 	return render(request, 'grumblr/follower.html', context)

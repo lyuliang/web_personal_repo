@@ -1,6 +1,6 @@
 function initialPosts() {
 
-    $.get("/grumblr/get_posts/")
+    $.get("/grumblr/get_follower_posts/")
       .done(function(data) {
 
           var list = $("#post_list");
@@ -15,22 +15,11 @@ function initialPosts() {
       });
 }
 
-function addPost(){
-    var post_text = $("#text")
-
-    $.post("/grumblr/add_post/", {text: post_text.val()})
-      .done(function(data) {
-
-          getUpdates();
-          post_text.val("").focus();
-      });
-}
-
 function getUpdates() {
     var list = $("#post_list")
     var max_time = list.data("max-time")
     console.log("max_time in updates", max_time)
-    $.get("/grumblr/get_posts/"+ max_time)
+    $.get("/grumblr/get_follower_posts/"+ max_time)
       .done(function(data) {
           list.data('max-time', data['max-time']);
           for (var i = 0; i < data.posts.length; i++) {
@@ -42,8 +31,6 @@ function getUpdates() {
 }
 
 $(document).ready(function () {
-  // Add event-handlers
-  $("#add_post").click(addPost);
 
   // Set up to-do list with initial DB items and DOM data
   initialPosts();

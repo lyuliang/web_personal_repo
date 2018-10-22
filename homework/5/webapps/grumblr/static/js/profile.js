@@ -1,12 +1,13 @@
 function initialPosts() {
-
-    $.get("/grumblr/get_profile_posts/")
+    var username = $("#username").html();
+    $.get("/grumblr/get_profile_posts/" + username)
       .done(function(data) {
-
           var list = $("#post_list");
+          console.log(234)
+          console.log(data)
           list.data('max-time', data['max-time']);
           list.html('')
-          getUpdates();
+
           for (var i = 0; i < data.posts.length; i++) {
               post = data.posts[i];
               var new_post = $(post.html);
@@ -17,9 +18,9 @@ function initialPosts() {
 
 function getUpdates() {
     var list = $("#post_list")
-    var max_time = list.data("max-time")
-    console.log("max_time in updates", max_time)
-    $.get("/grumblr/get_profile_posts/"+ max_time)
+    var username = $("#username").html();
+    var max_time = list.data("max-time");
+    $.get("/grumblr/get_profile_posts/"+ username + "/" + max_time)
       .done(function(data) {
           list.data('max-time', data['max-time']);
           for (var i = 0; i < data.posts.length; i++) {

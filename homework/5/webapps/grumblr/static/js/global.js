@@ -10,7 +10,7 @@ function initialPosts() {
           for (var i = 0; i < data.posts.length; i++) {
               post = data.posts[i];
               var new_post = $(post.html);
-              list.prepend(new_post);
+              list.append(new_post);
           }
       });
 }
@@ -36,7 +36,7 @@ function getUpdates() {
           for (var i = 0; i < data.posts.length; i++) {
               var post = data.posts[i];
               var new_post = $(post.html);
-              list.append(new_post);
+              list.prepend(new_post);
           }
       });
 }
