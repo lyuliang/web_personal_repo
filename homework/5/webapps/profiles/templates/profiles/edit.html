@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'profiles/edit.css' %}"/>{% endblock %}
+{% block title %}Grumblr - Edit Profile{% endblock %}
+
+{% block left_area %}
+    <p class="signup_hint">Edit Your Profile</p>
+    <form enctype="multipart/form-data" action="{% url 'edit' %}" method="post">
+        {% for field in form.visible_fields %}
+        <div class="error">{{field.errors}}</div>
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+        {% if field.name == "image" %}
+        <div class="image_select_area">
+            {{ field }}
+        </div>
+        {% else %}
+        <div class="row1">
+            <p class="input-label">{{ field.label_tag }}</p>
+            {{ field }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div>
+            <input type="submit" class="btn button-post" value="Update" />
+        </div>
+        {% csrf_token %}
+    </form>
+{% endblock %}
+
+{% block right_area %}
+<div class="col-4 global">
+    <p class="image_hint">Your Profile Image</p>
+    <img src="{% url 'get_profile_image' current_user.username %}" alt = "No Profile Image yet">
+
+</div>
+{% endblock%}
+
+{% block sidebuttons %}
+    <a class="btn button-stream button-view" href="{% url 'profile' current_user.username %}">View My<br>Profile</a>
+    <a class="btn button-stream button-back" href="{% url 'global' %}">Back to<br>Stream</a>
+    <a class="btn button-stream button-follower" href="{% url 'follower'%}">Follower<br>Stream</a>
+{% endblock %}
+

@@ -1,0 +1,137 @@
+p {
+	margin: 0;
+}
+.global {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*height: 1000px;*/
+	position: relative;
+}
+.black {
+	background-color: black;
+	padding-bottom: 500px;
+	/*height: 100%;*/
+}
+.white {
+	background-color: white;
+	padding: 0;
+}
+.top-right {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+}
+.gru {
+	position: absolute;
+	/*position: sticky;*/
+	top: 60px;
+	left: -20px;
+	color: #0062c8;
+	font-weight: bold;
+	font-size: 60px;
+	font-family: "Calibri", Sans-serif;
+}
+.logout {
+	color: #0062c8;
+    font-size: 26px;
+    text-decoration: underline;
+    position: absolute;
+    right: 50px;
+    top: 150px;
+}
+.button-stream {
+	background-color: yellow;
+	font-weight: bold;
+	font-size: 25px;
+    text-decoration: underline;
+    width: 170px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 200px;
+    text-align: center;
+    word-wrap: break-word;
+    color: black;
+    text-decoration-color: black;
+}
+.button-follower {
+	top: 330px;
+	color: black;
+}
+
+.form-stream {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 200px;
+	margin-right: 30px;
+	margin-left: 20px;
+}
+.share_hint {
+	color: yellow;
+	font-size: 30px;
+	align-content: center;
+}
+.post_box {
+	position: relative;
+	top: 20px;
+	height: 350px;
+	width: 90%;
+	text-align: left;
+	font-size: 26px;
+	vertical-align: top;
+	word-break: break-word;
+}
+.image_select {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+	word-break: break-word;
+	position: relative;
+	top: 30px;
+}
+.word-wrap {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.button-post {
+	background-color: yellow;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: 500px;
+    right: 60px;
+}
+.box {
+	padding: 20px;
+	/*width: 90%;*/
+	margin-right: 50px;
+	margin-bottom: 10px;
+}
+.name {
+	font-size: 20px;
+	text-decoration: underline;
+
+}
+img {
+	width: 100%;
+	height: auto;
+	max-height: 300px;
+	max-width: 80%;
+	margin-top: 10px;
+}
+.small_img {
+	width: 40px;
+	height: 40px;
+
+}
+.left_column {
+	padding-top: 50px;
+	padding-left: 60px;
+}

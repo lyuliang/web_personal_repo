@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'grumblr/global.css' %}"/>{% endblock %}
+{% block title %}Grumblr - Global Stream{% endblock %}
+
+{% block js %}
+<script src="/static/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="/static/js/global.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block left_area %}
+    {{ block.super }}
+{% endblock %}
+
+{% block right_area %}
+<div class="col-4 global">
+    <form id="form_post" enctype="multipart/form-data" class="form-group form-stream" method="POST">
+        <p class="share_hint">Share your life here:</p>
+{#        {% for field in form.visible_fields %}#}
+{#        <div>{{ field.name }}:{{field.errors}}</div>#}
+{#        {% endfor %}#}
+        {% if form.text.errors %}
+        <textarea class="post_box" name="post_box">{{form.text.errors}}</textarea>
+        {% else %}
+        {{ form.text }}
+        {% endif %}
+        {{ form.image }}
+
+        <button id="add_post" type="button" class="btn button-post">Post</button>
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock%}
+
+{% block sidebuttons %}
+    <a class="btn button-stream" href="{% url 'profile' current_user.username %}">View My<br>Profile</a>
+    <a class="btn button-stream button-follower" href="{% url 'follower'%}">Follower<br>Stream</a>
+{% endblock %}
+
