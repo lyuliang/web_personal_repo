@@ -72,7 +72,9 @@ def get_profile_posts(request, time="1970-01-01T00:00+00:00"):
 @transaction.atomic
 def get_follower_posts(request, time="1970-01-01T00:00+00:00"):
 	max_time = Post.get_max_time()
-	posts = Post.get_follower_posts(time)
+
+	followers = request.user.profile.followers.all()
+	posts = Post.get_follower_posts(followers, time)
 	context = {"max_time": max_time, "posts": posts}
 	return render(request, 'posts.json', context, content_type='application/json')
 

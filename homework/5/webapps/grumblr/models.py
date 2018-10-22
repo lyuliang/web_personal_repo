@@ -18,17 +18,14 @@ class Post(models.Model):
 
     @staticmethod
     def get_posts(time="1970-01-01T00:00+00:00"):
-        print("hehehehehe", time)
         return Post.objects.filter(time__gt=time).distinct().order_by("-time")
     @staticmethod
     def get_profile_posts(time="1970-01-01T00:00+00:00"):
-        print("hehehehehe", time)
         return Post.objects.filter(time__gt=time).distinct().order_by("-time")
 
     @staticmethod
-    def get_follower_posts(time="1970-01-01T00:00+00:00"):
-        print("hehehehehe", time)
-        return Post.objects.filter(time__gt=time).distinct().order_by("-time")
+    def get_follower_posts(followers, time="1970-01-01T00:00+00:00"):
+        return Post.objects.filter(time__gt=time, user__in=followers).distinct().order_by("-time")
 
     @property
     def html(self):
