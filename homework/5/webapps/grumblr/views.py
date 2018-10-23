@@ -10,37 +10,9 @@ from grumblr.models import *
 from grumblr.forms import *
 from django.db import transaction
 
-# @login_required
-# def home(request):
-#
-# 	# return render(request, 'global.html', {})
-#
-# 	context = {}
-# 	context['current_user'] = request.user
-# 	context['PostList'] = Post.objects.all().order_by('-time')
-#
-# 	if request.method == 'GET':
-# 		context['form'] = PostForm()
-# 		return render(request, 'grumblr/global.html', context)
-#
-# 	new_post = Post(user=request.user, time=datetime.datetime.now())
-# 	new_post.with_image = 'image' in request.FILES.keys()
-# 	form = PostForm(request.POST, request.FILES, instance=new_post)
-#
-# 	if not form.is_valid():
-#
-# 		context['form'] = form
-# 		return render(request, 'grumblr/global.html', context)
-#
-# 	form.save()
-# 	context['PostList'] = Post.objects.all().order_by('-time')
-# 	context['form'] = PostForm()
-# 	return render(request, 'grumblr/global.html', context)
-
 @login_required
 def home(request):
 	context = {}
-	print("here?\n")
 	context['current_user'] = request.user
 	if request.method == 'GET':
 		context['form'] = PostForm()
@@ -66,7 +38,6 @@ def get_profile_posts(request, name, time="1970-01-01T00:00+00:00"):
 @login_required
 @transaction.atomic
 def get_follower_posts(request, time="1970-01-01T00:00+00:00"):
-	print("\n get follower posts\n")
 	max_time = Post.get_follower_max_time(request.user)
 	posts = Post.get_follower_posts(request.user, time)
 	context = {"max_time": max_time, "posts": posts}
@@ -85,6 +56,26 @@ def add_post(request):
 	else:
 		form.save()
 	return HttpResponse("")
+
+@login_required
+@transaction.atomic
+def add_comment(request, post_id):
+	# context = {}
+	# context['current_user'] = request.user
+	if not 'comment_text' in request.POST or not request.POST['comment_text']:
+		raise Http404
+	else:
+		post = Post.objects.get(id = post_id)
+		new_comment = Comment(user=request.user, time=datetime.datetime.now(), post=post)
+		new_comment.text = request.POST['comment_text']
+		new_comment.save()
+	return HttpResponse("")
+
+@login_required
+@transaction.atomic
+def get_comments(request, post_id):
+	comments = Comment.get_comments(post_id)
+	return render(request, 'comments.json', {"comments":comments}, content_type='application/json')
 
 @login_required
 def profile(request, name):

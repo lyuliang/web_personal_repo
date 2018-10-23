@@ -16,6 +16,8 @@ urlpatterns = [
 
     path('get_post_image/<int:id>', get_post_image, name = 'get_post_image'),
     path('add_post/', add_post, name = 'add_post'),
+    path('add_comment/<int:post_id>', add_comment, name = 'add_comment'),
+    path('get_comments/<int:post_id>', get_comments, name = 'get_comments'),
     path('profile/<str:name>', profile, name = 'profile'),
     path('follower/', follower, name = 'follower'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

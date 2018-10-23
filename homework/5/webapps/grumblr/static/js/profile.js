@@ -3,8 +3,6 @@ function initialPosts() {
     $.get("/grumblr/get_profile_posts/" + username)
       .done(function(data) {
           var list = $("#post_list");
-          console.log(234)
-          console.log(data)
           list.data('max-time', data['max-time']);
           list.html('')
 
@@ -13,6 +11,7 @@ function initialPosts() {
               var new_post = $(post.html);
               list.append(new_post);
           }
+          displayComments();
       });
 }
 
@@ -27,8 +26,38 @@ function getUpdates() {
               var post = data.posts[i];
               var new_post = $(post.html);
               list.prepend(new_post);
+              getComments(data.posts[i].id);
           }
       });
+}
+
+function addComment(post_id){
+    var comment_text = $("#comment_text"+post_id);
+    $.post("/grumblr/add_comment/" + post_id, {"comment_text": comment_text.val()})
+        .done(function(data) {
+        getComments(post_id);
+        comment_text.val("")
+    });
+}
+
+function displayComments() {
+    var post_list = $("#post_list");
+    var posts = post_list.children("div.jumbotron");
+    for (var i = 0; i < posts.length; i++) {
+        var post = posts[i];
+        getComments(post.id);
+    }
+}
+
+function getComments(post_id) {
+    var comment_list = $("#comment_list" + post_id);
+    comment_list.html("")
+    $.get("/grumblr/get_comments/" + post_id)
+        .done(function(data){
+            for (var i = 0; i < data.comments.length; i ++) {
+                comment_list.prepend(data.comments[i].html)
+            }
+        });
 }
 
 $(document).ready(function () {

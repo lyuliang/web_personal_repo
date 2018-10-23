@@ -1,12 +1,23 @@
 {% load static %}
 
-<div class='jumbotron box word-wrap'>
+<div id='{{ Post.id }}' class='jumbotron box word-wrap'>
   <img class='small_img' src='{% url 'get_profile_image' Post.user.username %}' alt = ' '>
   <a class='name' href='{% url 'profile' Post.user.username %}'>{{Post.user.username}}</a>
-  <p class='lead'>{{Post.text}}</p>
+  <h4>{{Post.text}}</h4>
 {#  {% if Post.with_image == True %}#}
 {#  <img src='{% url 'get_post_image' Post.id %}' alt = ' '>#}
 {#  {% endif %}#}
   <hr class='my-3'>
   <p>{{Post.time}}</p>
+  <hr class='mr-3'>
+
+  <div class='input-group mb-3'>
+    <input id='comment_text{{ Post.id }}' type='text' class='form-control col-6' placeholder='Add a comment' name='comment' maxlength='42'>
+    <div class='input-group-append'>
+        <button id='add_comment{{ Post.id }}' class='btn btn-outline-success' onclick='addComment({{ Post.id }})'>Comment</button>
+    </div>
+  </div>
+
+  <div id='comment_list{{ Post.id }}'></div>
+
 </div>

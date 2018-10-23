@@ -6,12 +6,11 @@ function initialPosts() {
           var list = $("#post_list");
           list.data('max-time', data['max-time']);
           list.html('')
-          // getUpdates();
           for (var i = 0; i < data.posts.length; i++) {
-              post = data.posts[i];
-              var new_post = $(post.html);
+              var new_post = $(data.posts[i].html);
               list.append(new_post);
           }
+          displayComments();
       });
 }
 
@@ -26,17 +25,45 @@ function addPost(){
       });
 }
 
+function addComment(post_id){
+    var comment_text = $("#comment_text"+post_id);
+    $.post("/grumblr/add_comment/" + post_id, {"comment_text": comment_text.val()})
+        .done(function(data) {
+        getComments(post_id);
+        comment_text.val("")
+    });
+}
+
+function displayComments() {
+    var post_list = $("#post_list");
+    var posts = post_list.children("div.jumbotron");
+    for (var i = 0; i < posts.length; i++) {
+        var post = posts[i];
+        getComments(post.id);
+    }
+}
+
+function getComments(post_id) {
+    var comment_list = $("#comment_list" + post_id);
+    comment_list.html("")
+    $.get("/grumblr/get_comments/" + post_id)
+        .done(function(data){
+            for (var i = 0; i < data.comments.length; i ++) {
+                comment_list.prepend(data.comments[i].html)
+            }
+        });
+}
+
 function getUpdates() {
     var list = $("#post_list")
     var max_time = list.data("max-time")
-    console.log("max_time in updates", max_time)
     $.get("/grumblr/get_posts/"+ max_time)
       .done(function(data) {
           list.data('max-time', data['max-time']);
           for (var i = 0; i < data.posts.length; i++) {
-              var post = data.posts[i];
-              var new_post = $(post.html);
+              var new_post = $(data.posts[i].html);
               list.prepend(new_post);
+              getComments(data.posts[i].id);
           }
       });
 }

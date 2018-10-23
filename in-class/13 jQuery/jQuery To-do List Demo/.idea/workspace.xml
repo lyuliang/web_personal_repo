@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f2dbf2-9845-4ffa-b15b-f92b73ba9bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../12 Ajax/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../12 Ajax/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise_handout_code/sio/static/sio.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise_handout_code/sio/static/sio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/follower.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/follower.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/posts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/post_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/post_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +49,9 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -69,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shared_todo_list/static/js/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="46" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="46" />
+            <state relative-caret-position="100">
+              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -81,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shared_todo_list/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="105">
               <caret line="7" column="29" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="29" />
             </state>
           </provider>
@@ -90,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shared_todo_list/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
+            <state relative-caret-position="420">
               <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -111,17 +122,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shared_todo_list/templates/items.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+            <state relative-caret-position="15">
               <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shared_todo_list/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="345">
+              <caret line="15" column="21" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="21" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -132,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shared_todo_list/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="180">
               <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -146,6 +157,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>item-id</find>
+      <find>item</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,6 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,7 +222,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,7 +284,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16300367" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16483517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -303,13 +315,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/shared_todo_list/static/js/jquery-2.1.4.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/shared_todo_list/templates/item.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -320,14 +326,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shared_todo_list/templates/items.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="15">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shared_todo_list/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="180">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -335,23 +341,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shared_todo_list/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared_todo_list/static/js/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shared_todo_list/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
+        <state relative-caret-position="420">
           <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -361,11 +353,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shared_todo_list/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="345">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="21" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared_todo_list/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared_todo_list/static/js/todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>

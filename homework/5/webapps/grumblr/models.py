@@ -30,7 +30,6 @@ class Post(models.Model):
 
     @property
     def html(self):
-        print("\n call html\n")
         return render_to_string('post_template.html', {
             # 'id': self.id,
             # 'text': self.text,
@@ -51,5 +50,29 @@ class Post(models.Model):
     def get_follower_max_time(user):
         followers = user.profile.followers.all()
         return Post.objects.filter(user__in=followers).aggregate(Max('time'))['time__max'] or "1970-01-01T00:00+00:00"
+
+class Comment(models.Model):
+    text = models.CharField(max_length=42)
+    time = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user
+
+    # Returns all recent additions to the to-do list.
+    @staticmethod
+    def get_comments(post_id):
+        post = Post.objects.get(id=post_id)
+        comments = Comment.objects.filter(post=post).distinct().order_by("time")
+        return comments
+
+    # Generates the HTML-representation of a single to-do list item.
+    @property
+    def html(self):
+        return render_to_string('comment_template.html',
+                                {'Comment': self,
+                                 }).replace("\n", "")
+
 
 
