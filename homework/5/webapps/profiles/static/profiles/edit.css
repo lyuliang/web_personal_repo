@@ -107,7 +107,7 @@ p {
 .image_select_area {
     position: relative;
     left: 100%;
-    top: -400px;
+    top: -350px;
 }
 .word-wrap {
 	word-break: break-all;
