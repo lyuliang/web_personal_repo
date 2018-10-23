@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f2dbf2-9845-4ffa-b15b-f92b73ba9bd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../homework/5/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/follower.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/follower.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/static/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/post.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/grumblr/posts.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/post_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/templates/post_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

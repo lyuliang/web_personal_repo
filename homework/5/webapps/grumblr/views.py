@@ -50,7 +50,7 @@ def add_post(request):
 	# context['current_user'] = request.user
 	new_post = Post(user=request.user, time=datetime.datetime.now())
 	# new_post.with_image = 'image' in request.FILES.keys()
-	form = PostForm(request.POST, request.FILES, instance=new_post)
+	form = PostForm(request.POST, instance=new_post)
 	if not form.is_valid():
 		raise Http404
 	else:
