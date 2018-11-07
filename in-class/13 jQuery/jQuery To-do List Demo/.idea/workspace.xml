@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6f2dbf2-9845-4ffa-b15b-f92b73ba9bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../homework/5/webapps/grumblr/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="c6f2dbf2-9845-4ffa-b15b-f92b73ba9bd3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +35,7 @@
     <session id="681007625">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="2" />

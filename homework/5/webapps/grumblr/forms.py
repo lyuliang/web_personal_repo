@@ -15,8 +15,10 @@ class PostForm(forms.ModelForm):
         self.fields['text'].widget.attrs.update({'id': 'text'})
         self.fields['image'].widget.attrs.update({'class': 'image_select'})
     def clean_text(self):
+        print('enter clean_text')
         cleaned_data = super(PostForm, self).clean()
         text = cleaned_data.get('text')
+        print('text::', text)
         if text and len(text) > 42:
             raise forms.ValidationError("Post should be less than 42 characters!\
                                         (delete this message to continue)")

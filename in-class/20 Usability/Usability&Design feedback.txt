@@ -1,0 +1,20 @@
+1. Register a user.
+User comment:easy to use, but when finish do not auto fill the username and password on the login page
+2. Login
+User comment: easy to use
+3. Make a new post.
+User comment:Good to use, but my photo part do not have a default image
+4. Comment others post
+User comment:Good to use, the photo is still broken, and comment on myself looks silly. Have the length detection of the comment.
+5. Follow 2 user.
+User comment: Design of two button for already follow users is not user-friendly. Especially for I want to know whether I have already this user on this users' profile page. Function works correctly.
+6. View a user's profile.
+User comment: Easy to use and works correctly.
+7. Edit your own profile.
+User comment:Age check is great. DO not have a prescreen of my uploaded photo
+8. View followers stream page.
+User comment: asy to use. However, the content of the navigation bar changes frequently which is not easy to ensure which one to click.
+9. Unfollow a user.
+User comment:Design of two button for already follow users is not user-friendly. Especially for I want to know whether I have already this user on this users' profile page. Function works correctly.
+
+Tester: Haozhe Wang

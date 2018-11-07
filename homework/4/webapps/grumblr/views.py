@@ -24,7 +24,6 @@ def home(request):
 	form = PostForm(request.POST, request.FILES, instance=new_post)
 
 	if not form.is_valid():
-
 		context['form'] = form
 		return render(request, 'grumblr/global.html', context)
 
