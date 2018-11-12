@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap-4/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'authentication/login.css' %}"/>
+        <title>{% block title %}Grumblr - Log in{% endblock %}</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="top-blank"></div>
+        <div class="signup-top">
+            <p class="gru-signup">GRUMBLR</p>
+            <p class="share-signup">Share the highlights of your life</p>
+        </div>
+        <div class="signup-middle">
+            {% block content %}
+            <form action="{% url 'login' %}" method="post">
+                <p class="signup_hint">Log &nbsp;in &nbsp;to &nbsp;your &nbsp;GRUMBLR</p>
+
+                {% if form.errors %}
+                <p class="error">Incorrect username or password.</p>
+                {% endif %}
+
+                {% for field in form.visible_fields %}
+                <div class="row1">
+                    <p class="input-label">{{ field.label_tag }}</p>
+                    <div class="input-text">{{ field }}</div>
+                </div>
+                {% endfor %}
+
+                <div>
+                    <input type="submit" class="btn button-log_sign" value="Log in">
+                </div>
+                 <a class="reset" href="{% url 'password_reset' %}">Reset Password</a>
+                <input type="hidden" name="next" value="{{ next }}" />
+                {% csrf_token %}
+            </form>
+            {% endblock %}
+        </div>
+        <div>
+            <a href="{% url 'signup' %}"><p class="blue-underline">No account yet? Sign up for FREE!</p></a>
+        </div>
+    </body>
+</html>
+
+

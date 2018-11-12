@@ -1,0 +1,11 @@
+{% load static %}
+ <div class='row'>
+     <div class='col-4'>
+         <img class='small_img' src='{% url 'get_profile_image' Comment.user.username %}' alt = ' '>
+         <a class='name' href='{% url 'profile' Comment.user.username %}'>{{Comment.user.username}}</a>
+     </div>
+     <div class='col'>
+          <p class='lead'>{{Comment.text}}</p>
+          <p class='align-right'>{{Comment.time}}</p>
+     </div>
+ </div>
