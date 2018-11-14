@@ -8,6 +8,7 @@ class Profile(models.Model):
     age = models.IntegerField(null=True, blank=True)
     bio = models.CharField(max_length=420, null=True, blank=True)
     image = models.ImageField(upload_to='profile_images/',
+                              default='Default.jpg',
                               null=True,
                               blank=True)
     followers = models.ManyToManyField(User,
