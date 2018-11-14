@@ -7,8 +7,8 @@ Commit graded: a6fdd53af81993b13029959a779b3464828e58d8
 
 ### Fulfilling the grumblr specification (20/20)
 
-### Input validation (10/20)
-  * -10, All requests from any client must be validated, including requests you expect to be generated using Ajax.
+### Input validation (15/20)
+  * -5, You should use Django Forms to validate your inputs. One of the goals of this assignment was to refactor your application to use Django forms.
 
 ### Appropriate use of web application technologies (48/50)
 
@@ -22,7 +22,7 @@ Commit graded: a6fdd53af81993b13029959a779b3464828e58d8
 ### Additional Information
 
 ---
-#### Total score (88/100)
+#### Total score (93/100)
 ---
 Graded by: {{Arihant Jain}} ({{arihantj@andrew.cmu.edu}})
 
