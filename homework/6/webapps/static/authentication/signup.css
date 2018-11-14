@@ -1,0 +1,138 @@
+body {
+    font-family: "Calibri", Sans-serif;
+    margin: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+div {
+    position: relative;
+}
+.signup-top {
+    width: 100%;
+    height: 170px;
+    position: relative;
+}
+.gru-signup {        
+    color: #0062c8;
+    font-weight: bold;
+    font-family: "Calibri", Sans-serif;
+    font-size: 4em;
+    position: absolute;
+    left: 40px;
+    top: 10px;
+}
+.share-signup {
+    color: #0062c8;
+    font-weight: bold;
+    font-family: "Calibri", Sans-serif;
+    font-size: 2.5em;
+    position: absolute;
+    right: 20px;
+    top: 110px;
+}
+.signup-middle {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    /*height: 650px;*/
+    font-size: 100px;
+    clear: both;
+}
+.signup_hint {
+    color: yellow;
+    font-family: "Papyrus", Fantasy;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    /*top: 40px;*/
+    padding-top: 40px;
+    left: 460px;
+    width: 100%;
+    margin-bottom: 0;
+}
+.error {
+    color: red;
+    font-family: "Calibri", Sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 45%;
+}
+.row1 {
+    position: relative;
+    top: 0;
+    height: 100px;
+}
+.input-label {
+    color: yellow;
+    font-size: 40px;
+    position: absolute;
+    right: 1000px;
+}
+.lastname-label {
+    color: yellow;
+    font-size: 40px;
+    position: absolute;
+    right: 500px;
+}
+.input-text {
+    border-style: solid;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    right: 550px;
+    width: 400px;
+    height: 60px;
+    font-size: 40px;
+}
+.input-firstname {
+    border-style: solid;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    right: 750px;
+    width: 200px;
+    height: 60px;
+    font-size: 40px;
+}
+.input-lastname {
+    border-style: solid;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    right: 250px;
+    width: 200px;
+    height: 60px;
+    font-size: 40px;
+}
+.signup-bottom {
+    height: 100px;
+    width: 100%;
+}
+.blue-underline {
+    color: #0062c8;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: underline;
+    align-self: center;
+    position: relative;
+    top: 30px;
+    text-align: center;         
+}
+.button-log_sign {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    width: 190px;
+    height: 70px;
+    position: relative;
+    left: 735px;
+    top: -35px;
+}

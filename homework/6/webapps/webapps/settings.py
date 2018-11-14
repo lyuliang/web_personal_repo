@@ -25,7 +25,7 @@ SECRET_KEY = 'b!d90qvb1url!$tuy!xwhok9xe56%o)8*v+m-cbb*f64%%3@bu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -64,6 +64,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             'grumblr/templates/grumblr/',
+            os.path.join(BASE_DIR, 'grumblr/templates/grumblr/'),
+            os.path.join(BASE_DIR, 'authentication/templates/authentication/'),
             'authentication/templates/authentication/',
         ],
         'APP_DIRS': True,
@@ -130,3 +132,4 @@ MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
