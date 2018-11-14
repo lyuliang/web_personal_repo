@@ -55,7 +55,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.andrew.cmu.edu'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ['id']
+EMAIL_HOST_PASSWORD = os.environ['password']
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Grumblr <lyulianl@andrew.cmu.edu>'
 
 ROOT_URLCONF = 'webapps.urls'
 
