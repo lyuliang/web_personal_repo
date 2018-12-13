@@ -3,7 +3,8 @@ from django.utils.safestring import mark_safe
 import json
 
 def index(request):
-    return render(request, 'chat/index.html', {})
+    context = {}
+    return render(request, 'chat/index.html', context)
 
 def room(request, room_name):
     return render(request, 'chat/room.html', {
