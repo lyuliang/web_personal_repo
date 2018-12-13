@@ -35,7 +35,28 @@
 </form>
 
 <hr>
+<p>Students:
+  {% if students %}
+  {% for stu in students %}
+  {{stu}}<br>
+  {% endfor %}
+  {% endif %}
+</p>
+<hr>
+<p>Courses:
+  {% if courses %}
+  {% for cr in courses %}
+  {{cr}}<br>
+  {% endfor %}
+  {% endif %}
+</p>
+<hr>
 <p>Current course rosters:
+  {% if registrations %}
+  {% for reg in registrations %}
+  {{reg}}<br>
+  {% endfor %}
+  {% endif %}
 </p>
 
 </body>
