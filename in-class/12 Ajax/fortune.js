@@ -16,5 +16,6 @@ function handleResponse() {
         return;
     }
     var x = document.getElementById("content");
+    // x.innerText = this.responseText;
     x.innerHTML = this.responseText;
 }
