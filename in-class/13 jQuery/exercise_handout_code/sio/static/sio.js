@@ -49,8 +49,11 @@ $( document ).ready(function() {  // Runs when the document is ready
       event.preventDefault(); // Prevent form from being submitted
 
       // TODO:  Use jQuery to send an Ajax POST request to /sio/create-student.
-      // var itemField = $("#item-field");
-      // $.post("/sio/create-student", {"timestamp"})
+      var studentForm = $("#create-student-form");
+      $.post("/sio/create-student", {"timestamp":timestamp})
+          .done(function(data){
+              updateChanges(data);
+          })
   });
 
 
@@ -58,6 +61,11 @@ $( document ).ready(function() {  // Runs when the document is ready
       event.preventDefault(); // Prevent form from being submitted
 
       // TODO:  Use jQuery to send an Ajax POST request to /sio/create-course.
+      var studentForm = $("#create-course-form");
+      $.post("/sio/create-course", {"timestamp":timestamp})
+          .done(function(data){
+              updateChanges(data);
+          })
   });
 
 
