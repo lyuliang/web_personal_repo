@@ -6,8 +6,7 @@ class Student(models.Model):
 	lastname = models.CharField(max_length=200)
 
 	def __str__(self):
-		return '{} {} {}'.format(self.andrewid, self.firstname, 
-			self.lastname)
+		return self.andrewid + self.firstname + self.lastname
 
 class Course(models.Model):
 	courseno = models.IntegerField()
