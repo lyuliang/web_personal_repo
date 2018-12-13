@@ -1,10 +1,11 @@
-from django.urls import path
+from django.conf.urls import include, url
+
 from sio.views import *
 
 urlpatterns = [
-    path('', home),
-    path('home', home),  
-    path('create-student', create_student),
-    path('create-course', create_course),
-    path('register-student', register_student),
+    url(r'^$', home),
+    url(r'^home$', home),
+    url(r'^create-student$', create_student),
+    url(r'^create-course$', create_course),
+    url(r'^register-student$', register_student),
 ]
