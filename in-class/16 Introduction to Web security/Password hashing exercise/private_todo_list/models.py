@@ -19,16 +19,14 @@ class User(models.Model):
 
     def set_password(self, password):
         m = hashlib.sha256()
-        m.update(password)
         salt = random.random()
-        m.update(str(salt))
+        m.update(password+str(salt))
         self.salt = salt
         self.password = m.hexdigest()
 
     def check_password(self, password):
         m = hashlib.sha256()
-        m.update(password)
-        m.update(self.salt)
+        m.update(password+self.salt)
         return password == m.hexdigest()
 
     def __unicode__(self):
